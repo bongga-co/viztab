@@ -3,18 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rebass/grid": "^6.1.0",
+    "intersection-observer": "^0.7.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-grid-layout": "^0.17.1",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1",
+    "tableau-api": "^2.2.3",
+    "tableau-react": "^1.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "eject": "react-scripts eject",
+    "lint": "standard --fix",
+    "deploy": "yarn build && firebase deploy"
   },
   "browserslist": {
     "production": [
@@ -27,5 +32,41 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "7.7.4",
+    "babel-eslint": "10.0.3",
+    "babel-plugin-module-resolver": "3.2.0",
+    "redux-devtools-extension": "2.13.8",
+    "standard": "14.3.1"
+  },
+  "standard": {
+    "ignore": []
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "react-app",
+      "./node_modules/standard/eslintrc.json"
+    ],
+    "plugins": [
+      "react",
+      "json",
+      "import"
+    ],
+    "globals": {
+      "new": true,
+      "localStorage": true,
+      "google": true,
+      "process": true,
+      "__dirname": true,
+      "describe": true,
+      "require": true,
+      "module": true,
+      "it": true,
+      "Promise": true,
+      "console": true,
+      "__DEV__": true
+    }
   }
 }
