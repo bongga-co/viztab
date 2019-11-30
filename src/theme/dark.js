@@ -8,7 +8,7 @@ export default Object.assign({}, general, {
     background: '#303030'
   },
   logo: {
-    src: './images/logo.png',
+    src: './images/logo_dark.png',
     color: '#8799a7'
   },
   content: {

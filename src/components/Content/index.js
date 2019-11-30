@@ -8,5 +8,4 @@ export const Content = styled(Box).attrs({
 })`
   background-color: ${props => props.theme.content.background};
   min-height: ${props => props.theme.contentHeight};
-  position: relative;
 `

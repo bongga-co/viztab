@@ -1,5 +1,7 @@
 import React from 'react'
+import { withTheme } from 'styled-components'
+import { APP_NAME } from 'globals/constants'
 
-export const Logo = () => (
-  <img src='./images/logo.png' alt='' height={50} />
-)
+export const Logo = withTheme(({ theme }) => (
+  <img src={theme.logo.src} alt={APP_NAME} height={50} />
+))
