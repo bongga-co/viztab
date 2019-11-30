@@ -22,21 +22,6 @@ export default Object.assign({}, general, {
     color: '#ffffff',
     activeColor: '#BCD002'
   },
-  contextMenu: {
-    background: '#3F3F3F',
-    userInfoBackground: '#4F4F4F',
-    userInfoText: '#ffffff',
-    sessionText: '#A7A7A7',
-    itemColor: '#bababa',
-    itemColorActive: '#333333',
-    itemBackgroundActive: '#BCD002',
-    separator: '#4F4F4F',
-    iconColor: '#BCD002',
-    iconColorActive: '#333333',
-    sessionButton: '#606060',
-    sessionButtonIcon: '#BCD002',
-    arrow: 'invert(1)'
-  },
   footer: {
     background: '#303030',
     text: '#ffffff'

@@ -10,7 +10,7 @@ export const Card = styled(Box)`
   & > img {
     width: ${props => props.width};
     height: ${props => props.height};
-    object-fit: cover;
+    object-fit: ${props => props.cover};
   
     ${props => !props.interactive && css`
       user-select: none;
@@ -24,12 +24,14 @@ Card.propTypes = {
   interactive: PropTypes.bool,
   background: PropTypes.string,
   width: PropTypes.string,
-  height: PropTypes.string
+  height: PropTypes.string,
+  cover: PropTypes.cover
 }
 
 Card.defaultProps = {
   interactive: false,
   background: '#ffffff',
   width: '100%',
-  height: '100%'
+  height: '100%',
+  cover: 'cover'
 }
