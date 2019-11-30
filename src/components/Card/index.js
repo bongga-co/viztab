@@ -25,7 +25,7 @@ Card.propTypes = {
   background: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
-  cover: PropTypes.cover
+  cover: PropTypes.string
 }
 
 Card.defaultProps = {
