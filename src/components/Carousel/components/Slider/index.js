@@ -4,6 +4,7 @@ import ReactSlick from 'react-slick'
 export const Slider = styled(ReactSlick)`
   height: 100%;
   width: 100%;
+  overflow: hidden;
   
   & iframe {
     height: 95vh !important;

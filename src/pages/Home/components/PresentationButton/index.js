@@ -15,7 +15,7 @@ export const PresentationButton = ({ onClick }) => {
     >
       <Flex alignItems='center'>
         <Text textcolor='#fff'>Presentation Mode</Text>&nbsp;&nbsp;
-        <CustomIcon src='./images/close.png' size='20px' />
+        <CustomIcon src='./images/presentation.png' size='20px' />
       </Flex>
     </Button>
   )

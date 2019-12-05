@@ -7,7 +7,7 @@ const Container = styled(Flex)`
   background-color: ${props => props.background};
 
   ${props => props.show && css`
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0; 
     bottom: 0; 
