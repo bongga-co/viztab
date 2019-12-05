@@ -8,11 +8,15 @@ const Container = styled(Flex)`
 
   ${props => props.show && css`
     position: absolute; 
-    top: 0; 
+    top: 0;
     left: 0; 
     bottom: 0; 
     right: 0; 
     z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,1.0);
+    overflow: hidden;
   `}
 `
 

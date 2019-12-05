@@ -11,8 +11,7 @@ export const Report = memo(({ data }) => {
 
   useEffect(() => {
     if (show && data) {
-      const viz = new window.tableau.Viz(reportRef.current, data.embedUrl)
-      console.log(viz)
+      window.viz = new window.tableau.Viz(reportRef.current, data.embedUrl)
     }
   }, [data, show])
 
@@ -31,7 +30,7 @@ export const Report = memo(({ data }) => {
         }
       })
 
-      observer.observe(articleRef.current)
+      articleRef.current && observer.observe(articleRef.current)
     })
   }, [articleRef])
 

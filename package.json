@@ -5,11 +5,14 @@
   "dependencies": {
     "@rebass/grid": "^6.1.0",
     "intersection-observer": "^0.7.0",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-grid-layout": "^0.17.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-slick": "^0.25.2",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",
     "tableau-api": "^2.2.3",
     "tableau-react": "^1.2.1"

@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import { Box } from '@rebass/grid'
 
 export const Content = styled(Box).attrs({
-  py: 3,
-  px: 5,
+  p: 3,
   as: 'main'
 })`
   background-color: ${props => props.theme.content.background};

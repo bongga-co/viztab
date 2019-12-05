@@ -49,7 +49,7 @@ export const FullScreen = ({ children, show, scaffold, onExit }) => {
               </Flex>
             </Button>
           </Container>
-          <Container height='95vh' background='#ffffff'>
+          <Container height='95vh' background='rgba(30,30,30,1.0)'>
             {children}
           </Container>
         </>}
@@ -59,10 +59,10 @@ export const FullScreen = ({ children, show, scaffold, onExit }) => {
 }
 
 FullScreen.propTypes = {
-  children: PropTypes.any.isRequired,
   scaffold: PropTypes.bool,
-  show: PropTypes.bool,
-  onExit: PropTypes.func
+  show: PropTypes.bool.isRequired,
+  onExit: PropTypes.func.isRequired,
+  children: PropTypes.any.isRequired
 }
 
 FullScreen.defaultProps = {

@@ -1,4 +1,4 @@
-export const startPresentationMode = e => {
+export const startPresentationMode = (e = null) => {
   const docElm = e || document.documentElement
 
   if (docElm.requestFullscreen) {
