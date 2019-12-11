@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
 import { stopPresentationMode } from 'utils/fullscreen'
+import { setFullScreenMode } from 'state/modules/ui/fullscreen'
 import { Flex } from '@rebass/grid'
 import { CustomIcon } from 'components/Icon'
 import { Button } from 'components/Button'
 import Container from './components/Container'
 
 export const FullScreen = ({ children, show, scaffold, onExit }) => {
+  const dispatch = useDispatch()
+
   useEffect(() => {
     const onFullScreen = e => {
       if (document.fullscreenElement) {
-        // start
+        dispatch(setFullScreenMode())
       } else {
+        dispatch(setFullScreenMode())
         onExit()
       }
     }
@@ -20,7 +25,7 @@ export const FullScreen = ({ children, show, scaffold, onExit }) => {
     return () => {
       document.removeEventListener('fullscreenchange', onFullScreen)
     }
-  }, [onExit])
+  }, [onExit, dispatch])
 
   if (!show) return null
 

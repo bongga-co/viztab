@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Flex } from '@rebass/grid'
 
-import { useSelector, useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 import { fetchReports } from 'state/modules/data/reports'
 import { startPresentationMode } from 'utils/fullscreen'
 
@@ -14,10 +14,7 @@ import { Carousel } from 'components/Carousel'
 import { Report } from 'components/Report'
 import { PresentationButton } from './components/PresentationButton'
 
-const Home = () => {
-  const data = useSelector(state => state.data.reports.data)
-  const dispatch = useDispatch()
-
+const Home = ({ data, getReports }) => {
   const [fullMode, setFullMode] = useState(false)
   const [current, setCurrent] = useState(null)
 
@@ -37,9 +34,7 @@ const Home = () => {
     setFullMode(false)
   }
 
-  useEffect(() => {
-    dispatch(fetchReports())
-  }, [dispatch])
+  useEffect(() => { getReports() }, [getReports])
 
   return (
     <>
@@ -68,11 +63,19 @@ const Home = () => {
         ))}
       </Grid>
       <FullScreen show={fullMode} onExit={onExitFullMode}>
-        {current !== null && <Report data={current} />}
+        {current !== null && <Report data={current} single />}
         {current === null && <Carousel data={data} />}
       </FullScreen>
     </>
   )
 }
 
-export default Home
+const stateToProps = state => ({
+  data: state.data.reports.data
+})
+
+const actionsToProps = dispatch => ({
+  getReports: () => dispatch(fetchReports())
+})
+
+export default connect(stateToProps, actionsToProps)(Home)
