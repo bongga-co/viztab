@@ -34,7 +34,7 @@ const Home = ({ data, getReports }) => {
     setFullMode(false)
   }
 
-  useEffect(() => { getReports() }, [getReports])
+  useEffect(() => { data.length === 0 && getReports() }, [data, getReports])
 
   return (
     <>

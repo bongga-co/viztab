@@ -18,6 +18,11 @@ export default Object.assign({}, general, {
     fullscreenIcon: '#2E2C87',
     itemShadow: 'linear-gradient(rgba(200,200,200,0.3), rgba(255,255,255,1.0))'
   },
+  sidebar: {
+    background: '#ffffff',
+    width: 300,
+    active: '#f72'
+  },
   menu: {
     color: '#ffffff',
     activeColor: '#BCD002'

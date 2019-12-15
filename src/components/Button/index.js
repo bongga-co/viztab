@@ -5,11 +5,11 @@ export const Button = styled.button`
   background: ${props => props.background};
   color: inherit;
   border: none;
-  font: inherit;
   cursor: pointer;
   outline: inherit;
   border-radius: ${props => props.radius};
   padding: ${props => props.padding};
+  margin: ${props => props.margin};
 `
 
 Button.propTypes = {
@@ -19,5 +19,7 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  background: 'none'
+  background: 'none',
+  padding: 0,
+  margin: 0
 }

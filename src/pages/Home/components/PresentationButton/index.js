@@ -13,7 +13,7 @@ export const PresentationButton = ({ onClick }) => {
       onClick={onClick}
     >
       <Flex alignItems='center'>
-        <CustomIcon src='./images/presentation.png' size='20px' />
+        <CustomIcon src='./images/icons/presentation.png' size='20px' />
       </Flex>
     </Button>
   )

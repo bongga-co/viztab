@@ -18,7 +18,7 @@ CustomIcon.propTypes = {
 }
 
 CustomIcon.defaultProps = {
-  size: 30
+  size: '30px'
 }
 
 export default CustomIcon

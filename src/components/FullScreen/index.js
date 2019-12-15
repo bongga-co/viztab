@@ -50,7 +50,7 @@ export const FullScreen = ({ children, show, scaffold, onExit }) => {
             }}
             >
               <Flex alignItems='center'>
-                <CustomIcon src='./images/close.png' size='25px' />
+                <CustomIcon src='./images/icons/close.png' size='25px' />
               </Flex>
             </Button>
           </Container>

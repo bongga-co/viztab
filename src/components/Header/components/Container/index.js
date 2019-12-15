@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Flex } from '@rebass/grid'
 
-const Container = styled(Flex).attrs({
+export const Container = styled(Flex).attrs({
   px: 4,
   as: 'header',
   alignItems: 'center',
@@ -11,5 +11,3 @@ const Container = styled(Flex).attrs({
   position: relative;
   height: ${props => props.theme.headerHeight};
 `
-
-export default Container
