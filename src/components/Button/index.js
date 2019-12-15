@@ -15,11 +15,12 @@ export const Button = styled.button`
 Button.propTypes = {
   background: PropTypes.string,
   radius: PropTypes.string,
-  padding: PropTypes.string
+  padding: PropTypes.string,
+  margin: PropTypes.string
 }
 
 Button.defaultProps = {
   background: 'none',
-  padding: 0,
-  margin: 0
+  padding: '0px',
+  margin: '0px'
 }

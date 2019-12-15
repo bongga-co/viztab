@@ -12,35 +12,23 @@ import { Text } from 'components/Text'
 import { FullScreen } from 'components/FullScreen'
 import { Carousel } from 'components/Carousel'
 import { Report } from 'components/Report'
-import { PresentationButton } from './components/PresentationButton'
 
-const Home = ({ data, getReports }) => {
-  const [fullMode, setFullMode] = useState(false)
+const Home = ({ data, fullMode, getReports }) => {
   const [current, setCurrent] = useState(null)
 
   const onClickImage = item => {
     setCurrent(item)
-    setFullMode(true)
-    startPresentationMode()
-  }
-
-  const onStartPresentationMode = () => {
-    setFullMode(true)
     startPresentationMode()
   }
 
   const onExitFullMode = () => {
     setCurrent(null)
-    setFullMode(false)
   }
 
   useEffect(() => { data.length === 0 && getReports() }, [data, getReports])
 
   return (
     <>
-      <Flex justifyContent='flex-end'>
-        <PresentationButton onClick={onStartPresentationMode} />
-      </Flex>
       <Grid
         className='layout'
         margin={[50, 80]}
@@ -71,7 +59,8 @@ const Home = ({ data, getReports }) => {
 }
 
 const stateToProps = state => ({
-  data: state.data.reports.data
+  data: state.data.reports.data,
+  fullMode: state.ui.fullscreen.fullscreen
 })
 
 const actionsToProps = dispatch => ({
