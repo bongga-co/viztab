@@ -10,7 +10,7 @@ import { Card } from 'components/Card'
 import { Button } from 'components/Button'
 import { Text } from 'components/Text'
 import { FullScreen } from 'components/FullScreen'
-import { Carousel } from 'components/Carousel'
+import { SlickCarousel } from 'components/Carousel'
 import { Report } from 'components/Report'
 
 const Home = ({ data, fullMode, getReports }) => {
@@ -38,6 +38,7 @@ const Home = ({ data, fullMode, getReports }) => {
         responsive
         isResizable
         isDraggable
+        onLayoutChange={(e) => null}
       >
         {data.map(item => (
           <Card key={item.i} cover='contain'>
@@ -52,7 +53,7 @@ const Home = ({ data, fullMode, getReports }) => {
       </Grid>
       <FullScreen show={fullMode} onExit={onExitFullMode}>
         {current !== null && <Report data={current} single />}
-        {current === null && <Carousel data={data} />}
+        {current === null && <SlickCarousel data={data} />}
       </FullScreen>
     </>
   )

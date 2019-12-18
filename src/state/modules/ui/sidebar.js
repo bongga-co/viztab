@@ -49,7 +49,8 @@ export const fetchSidebarData = () => {
 
     const data = [
       { id: 1, name: 'Home', to: '/', icon: 'https://image.flaticon.com/icons/png/128/25/25694.png' },
-      { id: 2, name: 'Video', to: '/video', icon: 'https://www.materialui.co/materialIcons/av/slow_motion_video_black_192x192.png', active: 'current' }
+      { id: 2, name: 'Video', to: '/video', icon: 'https://www.materialui.co/materialIcons/av/slow_motion_video_black_192x192.png', active: 'current' },
+      { id: 3, name: 'Slider', to: '/slider', icon: 'https://www.materialui.co/materialIcons/av/slow_motion_video_black_192x192.png', active: 'current' }
     ]
     setTimeout(() => dispatch(receiveSidebarData(data)), 500)
   }
