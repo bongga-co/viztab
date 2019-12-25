@@ -27,7 +27,7 @@ export const useFullscreen = () => {
   }
 
   const setFullscreenStatus = (tag, status) => {
-    const e = tag || document.documentElement
+    const e = tag || (status ? document.documentElement : document)
 
     if (status) {
       if (e.requestFullscreen) {
@@ -40,16 +40,16 @@ export const useFullscreen = () => {
         e.msRequestFullscreen()
       }
     } else {
-      if (document.cancelFullScreen) {
-        document.cancelFullScreen()
-      } else if (document.exitFullscreen) {
-        document.exitFullscreen()
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen()
-      } else if (document.webkitCancelFullScreen) {
-        document.webkitCancelFullScreen()
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen()
+      if (e.cancelFullScreen) {
+        e.cancelFullScreen()
+      } else if (e.exitFullscreen) {
+        e.exitFullscreen()
+      } else if (e.mozCancelFullScreen) {
+        e.mozCancelFullScreen()
+      } else if (e.webkitCancelFullScreen) {
+        e.webkitCancelFullScreen()
+      } else if (e.msExitFullscreen) {
+        e.msExitFullscreen()
       }
     }
   }
