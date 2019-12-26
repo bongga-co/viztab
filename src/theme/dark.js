@@ -20,7 +20,7 @@ export default Object.assign({}, general, {
   },
   sidebar: {
     background: '#ffffff',
-    width: '20vw',
+    width: '270px',
     active: '#f72'
   },
   menu: {
