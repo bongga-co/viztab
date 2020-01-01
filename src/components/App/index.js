@@ -9,7 +9,7 @@ import THEME from 'theme'
 
 const store = configureStore()
 
-const App = () => {
+export const App = () => {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
@@ -22,5 +22,3 @@ const App = () => {
     </Provider>
   )
 }
-
-export default App
