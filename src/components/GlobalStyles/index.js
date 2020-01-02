@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1em;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
   }
 
   article, aside, details, figcaption, figure,
@@ -39,6 +40,7 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: #333333;
   }
 
   i {
@@ -114,5 +116,19 @@ export const GlobalStyles = createGlobalStyle`
     h4 {
         font-size: 1.1em;
     }
+  }
+
+  /** Scrollbar */
+  body::-webkit-scrollbar {
+    width: .3em;
+  }
+
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.7);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: red;
+    outline: 1px solid slategrey;
   }
 `

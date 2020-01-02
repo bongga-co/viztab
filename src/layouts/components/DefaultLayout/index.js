@@ -7,7 +7,7 @@ import { Content } from 'components/Content'
 import { Sidebar } from 'components/Sidebar'
 
 const Main = styled(Box).attrs(props => ({
-  width: '100vw',
+  width: ['100vw', '100vw', `calc(100vw - ${props.theme.sidebar.width})`],
   ml: [0, 0, props.theme.sidebar.width]
 }))`
   overflow-x: hidden;

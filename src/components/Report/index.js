@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, memo } from 'react'
 import PropTypes from 'prop-types'
-import tableau from 'tableau-api'
+import 'tableau-api'
 import Container from './components/Container'
 
 export const Report = memo(({ single, data, onClick }) => {

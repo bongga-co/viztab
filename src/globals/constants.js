@@ -1,1 +1,1 @@
-export const APP_NAME = 'VIZTAB'
+export const APP_NAME = 'CENTRO EDUCATIVO LEDDI'
