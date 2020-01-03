@@ -1,0 +1,35 @@
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { CustomIcon } from 'components/Icon'
+import { Flex, Box } from '@rebass/grid'
+import { Link } from 'react-router-dom'
+import { Text } from 'components/Text'
+import { Item } from './components'
+import { fetchSidebarData } from 'state/modules/ui/sidebar'
+
+export const Menu = (props) => {
+  const dispatch = useDispatch()
+  const { data } = useSelector(state => state.ui.sidebar)
+  const { pathname } = useSelector(state => state.router.location)
+
+  useEffect(() => {
+    data.length === 0 && dispatch(fetchSidebarData())
+  }, [data, dispatch])
+
+  return (
+    <ul>
+      {data.map(item => (
+        <Item key={item.id} active={pathname === item.to}>
+          <Link to={item.to}>
+            <Flex alignItems='center' py={3}>
+              <CustomIcon src={item.icon} size='20px' />
+              <Box ml={2}>
+                <Text>{item.name}</Text>
+              </Box>
+            </Flex>
+          </Link>
+        </Item>
+      ))}
+    </ul>
+  )
+}

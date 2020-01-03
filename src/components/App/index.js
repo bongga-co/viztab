@@ -3,24 +3,22 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import { ThemeProvider } from 'styled-components'
 import configureStore, { history } from 'state/store'
-import { Layout } from 'components/Layout'
+import { DefaultLayout } from 'layouts'
 import { Routes } from 'routes'
 import THEME from 'theme'
 
 const store = configureStore()
 
-const App = () => {
+export const App = () => {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <ThemeProvider theme={THEME.dark}>
-          <Layout>
+        <ThemeProvider theme={THEME.light}>
+          <DefaultLayout>
             <Routes />
-          </Layout>
+          </DefaultLayout>
         </ThemeProvider>
       </ConnectedRouter>
     </Provider>
   )
 }
-
-export default App

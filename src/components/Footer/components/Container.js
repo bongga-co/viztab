@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Flex } from '@rebass/grid'
 
-const Container = styled(Flex).attrs({
+export default styled(Flex).attrs({
   as: 'footer',
   px: 3,
   justifyContent: 'center',
@@ -9,6 +9,5 @@ const Container = styled(Flex).attrs({
 })`
   height: ${props => props.theme.footerHeight};
   background-color: ${props => props.theme.footer.background};
+  border-top: 1px solid ${props => props.theme.footer.border};
 `
-
-export default Container

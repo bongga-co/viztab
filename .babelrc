@@ -1,15 +1,19 @@
 {
-    "plugins": [
-      [
-        "module-resolver", {
-          "root": ["./src"],
-          "alias": {
-            "test": "./test",
-            "underscore": "lodash"
-          }
-        },
-        "@babel/plugin-syntax-dynamic-import"
-      ]
+  "plugins": [
+    [
+      "module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "test": "./test",
+          "underscore": "lodash"
+        }
+      },
+      "@babel/plugin-syntax-dynamic-import",
+      "babel-plugin-styled-components", {
+        "pure": true,
+        "ssr": false
+      }
     ]
-  }
+  ]
+}
   

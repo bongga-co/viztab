@@ -1,8 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import { render } from 'react-dom'
+import { App } from 'components/App'
+import { GlobalStyles } from 'components/GlobalStyles'
 import * as serviceWorker from './serviceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const tag = document.getElementById('root')
+const app = (
+  <>
+    <GlobalStyles />
+    <App />
+  </>
+)
+
+render(app, tag)
 serviceWorker.unregister()

@@ -1,29 +1,35 @@
-import React from 'react'
-import { NukaCarousel as Carousel } from 'components/Carousel'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { fetchReports } from 'state/modules/data/reports'
+import { SheetCarousel } from 'components/Carousel'
 
-const Slider = () => {
+const Slider = ({ data, getReports }) => {
+  useEffect(() => { data.length === 0 && getReports() }, [data, getReports])
+
   return (
     <>
-      <Carousel>
-        <div>
-          <img src='http://placehold.it/1000x400/ffffff/c0392b/&text=slide1' alt='' />
-          <div />
-        </div>
-        <div>
-          <img src='http://placehold.it/1000x400/ffffff/c0392b/&text=slide2' alt='' />
-          <div />
-        </div>
-        <div>
-          <img src='http://placehold.it/1000x400/ffffff/c0392b/&text=slide3' alt='' />
-          <div />
-        </div>
-        <div>
-          <img src='http://placehold.it/1000x400/ffffff/c0392b/&text=slide4' alt='' />
-          <div />
-        </div>
-      </Carousel>
+      <SheetCarousel
+        title='Slider 1'
+        data={data}
+      />
+      <SheetCarousel
+        title='Slider 2'
+        data={data}
+      />
+      <SheetCarousel
+        title='Slider 3'
+        data={data}
+      />
     </>
   )
 }
 
-export default Slider
+const stateToProps = state => ({
+  data: state.data.reports.data
+})
+
+const actionsToProps = dispatch => ({
+  getReports: () => dispatch(fetchReports())
+})
+
+export default connect(stateToProps, actionsToProps)(Slider)

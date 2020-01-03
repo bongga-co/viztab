@@ -5,7 +5,7 @@ export default Object.assign({}, general, {
   favicon: './images/favicon.ico',
   header: {
     height: 100,
-    background: '#F5F5F9'
+    background: '#ffffff'
   },
   logo: {
     src: './images/logo_light.png',
@@ -20,7 +20,7 @@ export default Object.assign({}, general, {
   },
   sidebar: {
     background: '#ffffff',
-    width: 300,
+    width: '270px',
     active: '#f72'
   },
   menu: {
@@ -28,7 +28,8 @@ export default Object.assign({}, general, {
     activeColor: '#0D0D5A'
   },
   footer: {
-    background: '#F5F5F9',
-    text: '#333333'
+    background: '#ffffff',
+    text: '#333333',
+    border: '#e1e5eb'
   }
 })
