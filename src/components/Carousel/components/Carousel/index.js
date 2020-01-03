@@ -143,7 +143,7 @@ const Container = styled.div`
   }
 
   .slick-next {
-    right: ${props => props.gap * 0.5}px;
+    right: ${props => props.gap * 0.5 - 2}px;
   }
 `
 
