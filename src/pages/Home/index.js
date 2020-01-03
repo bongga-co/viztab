@@ -1,71 +1,34 @@
-import React, { useState, useEffect } from 'react'
-import { Flex } from '@rebass/grid'
-
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchReports } from 'state/modules/data/reports'
-import { startPresentationMode } from 'utils/fullscreen'
+import { fetchReports, setReportDetail } from 'state/modules/data/reports'
+import { SheetGrid } from 'components/Grid'
 
-import { Grid } from 'components/Grid'
-import { Card } from 'components/Card'
-import { Button } from 'components/Button'
-import { Text } from 'components/Text'
-import { FullScreen } from 'components/FullScreen'
-import { SlickCarousel } from 'components/Carousel'
-import { Report } from 'components/Report'
-
-const Home = ({ data, fullMode, getReports }) => {
-  const [current, setCurrent] = useState(null)
-
-  const onClickImage = item => {
-    setCurrent(item)
-    startPresentationMode()
-  }
-
-  const onExitFullMode = () => {
-    setCurrent(null)
-  }
-
+const Home = ({ data, position, getReports, setReportDetail }) => {
   useEffect(() => { data.length === 0 && getReports() }, [data, getReports])
 
   return (
     <>
-      <Grid
-        className='layout'
-        margin={[50, 80]}
-        layouts={{ lg: data }}
-        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-        cols={{ lg: 4, md: 4, sm: 2, xs: 2, xxs: 1 }}
-        responsive
-        isResizable
-        isDraggable
-        onLayoutChange={(e) => null}
-      >
-        {data.map(item => (
-          <Card key={item.i} cover='contain'>
-            <img src={item.posterUrl} alt='' />
-            <Flex justifyContent='flex-end' py={2}>
-              <Button onClick={() => onClickImage(item)}>
-                <Text textcolor='white'>Detalle</Text>
-              </Button>
-            </Flex>
-          </Card>
-        ))}
-      </Grid>
-      <FullScreen show={fullMode} onExit={onExitFullMode}>
-        {current !== null && <Report data={current} single />}
-        {current === null && <SlickCarousel data={data} />}
-      </FullScreen>
+      <SheetGrid
+        data={data}
+        position={position}
+        onDetail={(item, e) => {
+          e.stopPropagation()
+          setReportDetail(null, null, e.target.getBoundingClientRect())
+        }}
+        onClose={e => setReportDetail()}
+      />
     </>
   )
 }
 
 const stateToProps = state => ({
   data: state.data.reports.data,
-  fullMode: state.ui.fullscreen.fullscreen
+  position: state.data.reports.position
 })
 
 const actionsToProps = dispatch => ({
-  getReports: () => dispatch(fetchReports())
+  getReports: () => dispatch(fetchReports()),
+  setReportDetail: (open, data, position) => dispatch(setReportDetail(open, data, position))
 })
 
 export default connect(stateToProps, actionsToProps)(Home)

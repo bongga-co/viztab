@@ -1,2 +1,2 @@
-export { default as SlickCarousel } from './components/SlickCarousel'
-export { default as NukaCarousel } from './components/NukaCarousel'
+export { default as Carousel } from './components/Carousel'
+export { default as SheetCarousel } from './components/SheetCarousel'

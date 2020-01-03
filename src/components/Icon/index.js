@@ -1,24 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-export const CustomIcon = ({ src, size, style }) => (
-  <img
-    src={src}
-    alt=''
-    width={size}
-    height={size}
-    style={style}
-  />
-)
-
-CustomIcon.propTypes = {
-  src: PropTypes.string,
-  size: PropTypes.string,
-  style: PropTypes.object
-}
-
-CustomIcon.defaultProps = {
-  size: '30px'
-}
-
-export default CustomIcon
+export { default as CustomIcon } from 'components/Icon/icons/CustomIcon'
+export { default as ArrowLeft } from 'components/Icon/icons/ArrowLeft'
+export { default as ArrowRight } from 'components/Icon/icons/ArrowRight'
+export { default as ArrowDown } from 'components/Icon/icons/ArrowDown'

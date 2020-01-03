@@ -1,33 +1,43 @@
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Container = styled.article`
-  min-height: 200px;
-  width: 100vw;
+export const Container = styled.article`
+  position: relative;
+  min-height: 100px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  pointer-events: ${props => props.canInteract ? 'all' : 'none'};
 
-  & div {
-    width: 100%;
-    height: 100%;
-
-    ${props => props.single && css`
-      display: flex;
-      justify-content: center;
-    `}
-
-    ${props => !props.interactive && css`
-      pointer-events: none;
-    `}
+  & > div iframe, & > img {
+    width: 100% !important;
+    height: 100% !important;
   }
+
+  & .__overlay {
+    opacity: ${props => props.active ? 1 : 0};
+  }
+
+  ${props => !props.active && css`
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 500ms;
+      transition-delay: 0ms;
+      cursor: pointer;
+
+      & .__overlay {
+        opacity: 1;
+      }
+    }
+  `}
 `
 
 Container.propTypes = {
-  interactive: PropTypes.bool,
-  single: PropTypes.bool
+  canInteract: PropTypes.bool,
+  active: PropTypes.bool
 }
 
 Container.defaultProps = {
-  interactive: false,
-  single: false
+  canInteract: true,
+  active: false
 }
-
-export default Container
