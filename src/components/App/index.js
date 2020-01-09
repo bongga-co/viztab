@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import { ThemeProvider } from 'styled-components'
 import configureStore, { history } from 'state/store'
-import { DefaultLayout } from 'layouts'
+import { SidebarLayout } from 'layouts'
 import { Routes } from 'routes'
 import THEME from 'theme'
 
@@ -14,9 +14,9 @@ export const App = () => {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <ThemeProvider theme={THEME.light}>
-          <DefaultLayout>
+          <SidebarLayout>
             <Routes />
-          </DefaultLayout>
+          </SidebarLayout>
         </ThemeProvider>
       </ConnectedRouter>
     </Provider>

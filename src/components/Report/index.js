@@ -6,7 +6,7 @@ import { Flex } from '@rebass/grid'
 import { Overlay } from 'components/Overlay'
 import { ButtonDetail } from './components/ButtonDetail'
 import { Container } from './components/Container'
-import { Stats } from './components/Stats'
+import { Section } from './components/Section'
 import { Mark } from './components/Mark'
 import { useLazyLoad } from 'hooks/lazyload'
 import { useOverlay } from 'hooks/overlay'
@@ -63,25 +63,17 @@ export const Report = withTheme(memo(({
       {withImages && (
         <img src={data.imageUrl} alt={data.name} />
       )}
-      <Overlay background={opened ? theme.content.fullscreen : null}>
-        <div>
-          {/* // top */}
-          {/* // middle */}
-          <Stats>
-            <Flex justifyContent='spacee-evenly' mb={2}>
-              <Flex>
-                <span>10</span>
-              </Flex>
-              <Flex>
-                <span>2</span>
-              </Flex>
-              <Flex>
-                <span>4.8</span>
-              </Flex>
-            </Flex>
+      <Overlay
+        flexDirection='column'
+        background={opened ? theme.content.fullscreen : null}
+      >
+        <Section />
+        <Section />
+        <Section>
+          <Flex justifyContent='center' alignItems='flex-end'>
             {!opened && <ButtonDetail onClick={onOpenDetail} />}
-          </Stats>
-        </div>
+          </Flex>
+        </Section>
       </Overlay>
       <Mark active={opened} />
     </Container>

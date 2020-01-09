@@ -27,6 +27,10 @@ export default Object.assign({}, general, {
     color: '#50549E',
     activeColor: '#0D0D5A'
   },
+  sheet: {
+    background: '#ffffff',
+    close: '#303030'
+  },
   footer: {
     background: '#ffffff',
     text: '#333333',

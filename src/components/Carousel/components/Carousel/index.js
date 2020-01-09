@@ -29,7 +29,6 @@ const Container = styled.div`
     overflow: hidden;
     margin: 0;
     padding: 0;
-    margin-right: ${props => props.gap * 0.5}px;
   }
 
   .slick-list:focus {
@@ -143,7 +142,7 @@ const Container = styled.div`
   }
 
   .slick-next {
-    right: ${props => props.gap * 0.5 - 2}px;
+    right: 0;
   }
 `
 

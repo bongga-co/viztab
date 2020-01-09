@@ -1,1 +1,2 @@
-export { default as DefaultLayout } from './components/DefaultLayout'
+export { default as SidebarLayout } from './components/SidebarLayout'
+export { default as StandardLayout } from './components/StandardLayout'

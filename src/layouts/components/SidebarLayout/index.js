@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 import { Flex, Box } from '@rebass/grid'
 import { Header } from 'components/Header'
 import { Footer } from 'components/Footer'
@@ -8,13 +8,12 @@ import { Sidebar } from 'components/Sidebar'
 
 const Main = styled(Box).attrs(props => ({
   width: ['100vw', '100vw', `calc(100vw - ${props.theme.sidebar.width})`],
-  ml: [0, 0, `calc(${props.theme.sidebar.width} + 15px)`]
+  ml: [0, 0, props.theme.sidebar.width]
 }))`
-  overflow-x: hidden;
   position: relative;
 `
 
-export default withTheme(({ children, theme }) => (
+export default ({ children }) => (
   <>
     <Flex>
       <Sidebar />
@@ -25,4 +24,4 @@ export default withTheme(({ children, theme }) => (
       </Main>
     </Flex>
   </>
-))
+)

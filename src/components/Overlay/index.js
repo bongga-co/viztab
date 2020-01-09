@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Flex } from '@rebass/grid'
 import PropTypes from 'prop-types'
 
-export const Overlay = styled.div.attrs({
+export const Overlay = styled(Flex).attrs({
   className: '__overlay'
 })`
   position: absolute !important;
@@ -15,12 +16,6 @@ export const Overlay = styled.div.attrs({
   transition: opacity .5s;
   height: 100%;
   width: 100%;
-
-  & > div {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
 `
 
 Overlay.propTypes = {

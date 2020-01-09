@@ -3,21 +3,24 @@ import PropTypes from 'prop-types'
 import { Grid } from 'components/Grid'
 import { Report } from 'components/Report'
 import { Sheet } from 'components/Sheet'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
+import { useResize } from 'hooks/resize'
 
 const Container = styled.div`
   position: relative;
 `
 
-const SheetGrid = memo(({ data, position, onDetail, onClose }) => {
+const SheetGrid = memo(({ theme, data, position, onDetail, onClose }) => {
+  const screen = useResize()
   const [selected, setSelected] = useState(null)
+  const sidebarWidth = theme.sidebar.width
 
   return (
     <Container>
       <Grid
         className='layout'
-        margin={[50, 80]}
-        width={1200}
+        margin={[50, 50]}
+        width={screen.width - sidebarWidth.slice(0, -2) - 60}
         layout={data}
         cols={4}
         isResizable={false}
@@ -60,4 +63,4 @@ SheetGrid.propTypes = {
   onClose: PropTypes.func
 }
 
-export default SheetGrid
+export default withTheme(SheetGrid)
