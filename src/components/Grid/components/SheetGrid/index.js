@@ -1,6 +1,6 @@
 import React, { useState, memo } from 'react'
 import PropTypes from 'prop-types'
-import { Grid } from 'components/Grid'
+import { GridLayout } from 'components/Grid'
 import { Report } from 'components/Report'
 import { Sheet } from 'components/Sheet'
 import styled, { withTheme } from 'styled-components'
@@ -17,18 +17,16 @@ const SheetGrid = memo(({ theme, data, position, onDetail, onClose }) => {
 
   return (
     <Container>
-      <Grid
+      <GridLayout
         className='layout'
         margin={[50, 50]}
         width={screen.width - sidebarWidth.slice(0, -2) - 60}
         layout={data}
         cols={4}
-        isResizable={false}
-        isDraggable={false}
         onLayoutChange={(e) => null}
       >
         {data.map(item => (
-          <div key={item.i}>
+          <div key={item.i}>s
             <Report
               data={item}
               withImages
@@ -40,7 +38,7 @@ const SheetGrid = memo(({ theme, data, position, onDetail, onClose }) => {
             />
           </div>
         ))}
-      </Grid>
+      </GridLayout>
       {selected && (
         <Sheet
           source='grid'

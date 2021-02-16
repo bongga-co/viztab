@@ -16,7 +16,9 @@ export default Object.assign({}, general, {
     fullscreen: '#BCD002',
     fullscreenText: '#2E2C87',
     fullscreenIcon: '#2E2C87',
-    itemShadow: 'linear-gradient(rgba(200,200,200,0.3), rgba(255,255,255,1.0))'
+    itemShadow: 'linear-gradient(rgba(200,200,200,0.3), rgba(255,255,255,1.0))',
+    primary: 'rgb(217, 74, 41)',
+    close: '#ffffff'
   },
   sidebar: {
     background: '#ffffff',

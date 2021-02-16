@@ -138,11 +138,11 @@ const Container = styled.div`
   }
 
   .slick-prev {
-    left: 0;
+    left: -0.4em;
   }
 
   .slick-next {
-    right: 0;
+    right: -0.4em;
   }
 `
 
